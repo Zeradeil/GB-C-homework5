@@ -4,6 +4,8 @@
 // [3 7 22 2 78] -> 76
 
 int NumArray = ReadLine("Введите размер массива => ");
+int minrnd = ReadLine("Введите нижнию границу массива => ");
+int maxrnd = ReadLine("Введите верхнию границу массива => ");
 int[] Array = FillArray();
 PrintArray(Array);
 DifMaxMin(Array);
@@ -23,7 +25,7 @@ void DifMaxMin(int[] Array)
             min = Array[i];
         }
     }
-    System.Console.WriteLine($"=> {max-min}");
+    System.Console.WriteLine($"=> {max - min}");
 }
 
 int ReadLine(string massage)
@@ -37,7 +39,7 @@ int[] FillArray()
     int[] array = new int[NumArray];
     for (int i = 0; i < NumArray; i++)
     {
-        array[i] = new Random().Next();
+        array[i] = new Random().Next(minrnd, maxrnd);
     }
     return array;
 }
